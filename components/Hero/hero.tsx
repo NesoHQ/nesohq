@@ -78,18 +78,25 @@ export function Hero() {
                 <Terminal />
 
                 {/* Stats Grid */}
-                <div className="grid grid-cols-2 gap-4 pt-6">
-                  <div className="p-4 bg-background/50 rounded-lg border border-white/5">
-                    <div className="text-muted-foreground text-xs uppercase tracking-wider mb-1">
-                      Community
+                {/* Stats Grid */}
+                <div className="grid grid-cols-3 gap-4 pt-6">
+                  <div className="p-4 bg-background/50 rounded-lg border border-white/5 text-center">
+                    <div className="text-muted-foreground text-xs uppercase tracking-widest font-mono mb-2">
+                      Members
                     </div>
-                    <div className="text-2xl font-bold">12k+</div>
+                    <div className="text-xl md:text-2xl font-bold">12k+</div>
                   </div>
-                  <div className="p-4 bg-background/50 rounded-lg border border-white/5">
-                    <div className="text-muted-foreground text-xs uppercase tracking-wider mb-1">
-                      Modules
+                  <div className="p-4 bg-background/50 rounded-lg border border-white/5 text-center">
+                    <div className="text-muted-foreground text-xs uppercase tracking-widest font-mono mb-2">
+                      Projects
                     </div>
-                    <div className="text-2xl font-bold">840</div>
+                    <div className="text-xl md:text-2xl font-bold">840</div>
+                  </div>
+                  <div className="p-4 bg-background/50 rounded-lg border border-white/5 text-center">
+                    <div className="text-muted-foreground text-xs uppercase tracking-widest font-mono mb-2">
+                      Est. Year
+                    </div>
+                    <div className="text-xl md:text-2xl font-bold">2026</div>
                   </div>
                 </div>
               </div>
