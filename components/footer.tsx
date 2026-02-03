@@ -174,26 +174,10 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Back to Top */}
-        <div className="flex justify-center mb-12">
-          <Link
-            href="#"
-            className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors group"
-          >
-            Back to top
-            <ArrowUp className="h-4 w-4 transition-transform group-hover:-translate-y-1" />
-          </Link>
-        </div>
-
         {/* Bottom Legal Section */}
         <div className="pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
             <div className="space-y-4">
-              <p className="text-xs text-gray-400 max-w-2xl">
-                NesoHQ is an Equal Opportunity Employer: Minority / Women /
-                Disability / Veteran / Gender Identity / Sexual Orientation /
-                Age.
-              </p>
               <div className="flex flex-wrap gap-6 text-xs text-gray-400">
                 <Link href="#" className="hover:text-white transition-colors">
                   Privacy
