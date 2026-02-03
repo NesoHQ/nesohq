@@ -15,7 +15,7 @@ export function Hero() {
       <div className="absolute top-0 inset-x-0 h-96 bg-linear-to-b from-background via-background/90 to-transparent z-0 pointer-events-none" />
 
       <div className="container px-6 mx-auto z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left: Content */}
           <div className="space-y-8">
             {/* Tech Badge */}
@@ -29,19 +29,19 @@ export function Hero() {
 
             <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-foreground leading-[1.1]">
               Constructing <br />
-              The <span className="text-primary">Unknown</span>.
+              The <span className="text-primary italic">Unknown</span>.
             </h1>
 
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-lg border-l-2 border-primary/20 pl-6">
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-lg border-l-2 border-primary/20 pl-6">
               NesoHQ is an open-source foundry for the next generation of
-              builders. We are engineering universal platforms that transcend
-              the boundaries of current learning ecosystems.
+              builders. We engineere universal platforms that transcend the
+              boundaries of current learning ecosystems.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
               <Button
                 size="lg"
-                className="h-12 px-8 rounded-none border border-primary bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all"
+                className="h-12 px-8 rounded-none border border-primary bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all uppercase tracking-widest font-bold text-xs"
                 asChild
               >
                 <Link href="/start">Start Building</Link>
@@ -49,7 +49,7 @@ export function Hero() {
               <Button
                 size="lg"
                 variant="ghost"
-                className="h-12 px-8 rounded-none hover:bg-muted font-mono"
+                className="h-12 px-8 rounded-none hover:bg-muted font-mono text-xs"
                 asChild
               >
                 <Link href="/protocol">
@@ -60,10 +60,10 @@ export function Hero() {
           </div>
 
           {/* Right: Abstract Visual / Dashboard UI */}
-          <div className="relative hidden lg:block">
+          <div className="relative">
             {/* Abstract Floating Cards / UI Elements */}
-            <div className="relative z-10 p-1 bg-linear-to-b from-white/10 to-transparent rounded-2xl backdrop-blur-sm border border-white/10 shadow-2xl">
-              <div className="bg-card/50 rounded-xl p-8 border border-white/5 space-y-6">
+            <div className="relative z-10 p-[1px] bg-linear-to-b from-white/10 to-transparent rounded-2xl backdrop-blur-sm border border-white/10 shadow-2xl overflow-hidden">
+              <div className="bg-card/50 rounded-xl p-6 md:p-8 border border-white/5 space-y-6">
                 <div className="flex items-center justify-between border-b border-white/5 pb-4">
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 rounded-full bg-red-500/50" />
@@ -102,28 +102,35 @@ export function Hero() {
         </div>
 
         {/* Bottom Feature Grid */}
-        <div className="mt-24 grid md:grid-cols-3 gap-8 border-t border-white/5 pt-12">
+        <div className="mt-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 border-t border-white/5 pt-12">
           <div className="space-y-3">
             <Globe className="h-6 w-6 text-primary" />
-            <h3 className="text-lg font-semibold">Universal Access</h3>
-            <p className="text-muted-foreground text-sm">
-              Knowledge should be free. We are breaking down silos in education.
+            <h3 className="text-lg font-semibold tracking-tight">
+              Universal Access
+            </h3>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              Knowledge should be free. We are breaking down silos in education
+              through open-source architecture.
             </p>
           </div>
           <div className="space-y-3">
             <Cpu className="h-6 w-6 text-primary" />
-            <h3 className="text-lg font-semibold">Future-Proof Tech</h3>
-            <p className="text-muted-foreground text-sm">
-              Built on cutting-edge stacks to prepare you for the industry of
-              tomorrow.
+            <h3 className="text-lg font-semibold tracking-tight">
+              Future-Proof Tech
+            </h3>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              Built on cutting-edge stacks to prepare you for the industrial
+              evolution of tomorrow.
             </p>
           </div>
-          <div className="space-y-3">
+          <div className="space-y-3 sm:col-span-2 lg:col-span-1">
             <Zap className="h-6 w-6 text-primary" />
-            <h3 className="text-lg font-semibold">Rapid Innovation</h3>
-            <p className="text-muted-foreground text-sm">
-              Move fast, break things, and build them better. The future waits
-              for no one.
+            <h3 className="text-lg font-semibold tracking-tight">
+              Rapid Innovation
+            </h3>
+            <p className="text-muted-foreground text-sm leading-relaxed">
+              Move fast, build precisely. The future foundry waits for no one in
+              the digital frontier.
             </p>
           </div>
         </div>
