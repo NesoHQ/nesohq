@@ -1,76 +1,113 @@
+"use client";
+
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
+import { Terminal, AlertTriangle, ArrowLeft } from "lucide-react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Home, Search, FileQuestion } from "lucide-react";
 
 export default function NotFound() {
-    return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 px-4 relative overflow-hidden">
-            <div className="max-w-2xl w-full text-center relative z-10">
-                {/* Animated 404 */}
-                <div className="relative mb-8">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-64 h-64 bg-gradient-to-r from-blue-400 to-indigo-600 rounded-full blur-3xl opacity-20 animate-pulse"></div>
-                    </div>
-                    <div className="relative">
-                        <h1
-                            className="font-black leading-none tracking-tighter"
-                            style={{
-                                fontSize: "clamp(100px, 20vw, 200px)",
-                                background:
-                                    "linear-gradient(to right, rgb(37, 99, 235), rgb(79, 70, 229), rgb(147, 51, 234))",
-                                WebkitBackgroundClip: "text",
-                                WebkitTextFillColor: "transparent",
-                                backgroundClip: "text",
-                            }}
-                        >
-                            404
-                        </h1>
-                    </div>
-                </div>
+  return (
+    <main className="min-h-screen flex flex-col bg-background">
+      <Navbar />
 
-                {/* Icon */}
-                <div className="flex justify-center mb-6">
-                    <div className="relative">
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full blur-xl opacity-30 animate-pulse"></div>
-                        <div className="relative bg-white dark:bg-gray-800 p-6 rounded-full shadow-xl border border-gray-200 dark:border-gray-700">
-                            <FileQuestion className="w-12 h-12 text-blue-600 dark:text-blue-400" />
-                        </div>
-                    </div>
-                </div>
+      <section className="relative flex-1 flex items-center justify-center overflow-hidden py-32">
+        {/* Technical Grid Background */}
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-size-[32px_32px]" />
 
-                {/* Message */}
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                    Page Not Found
-                </h2>
-                <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 max-w-md mx-auto">
-                    Oops! The page you're looking for seems to have wandered off
-                    into the digital void.
-                </p>
+        {/* Neptunian Glows */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[140px]" />
 
-                {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <Link href="/">
-                        <Button
-                            size="lg"
-                            className="w-full sm:w-auto text-white shadow-lg hover:shadow-xl transition-all duration-300 group"
-                            style={{
-                                background:
-                                    "linear-gradient(to right, rgb(37, 99, 235), rgb(79, 70, 229))",
-                            }}
-                        >
-                            <Home className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
-                            Back to Home
-                        </Button>
-                    </Link>
-                </div>
+        <div className="container px-6 mx-auto relative z-10">
+          <div className="max-w-3xl mx-auto text-center space-y-12">
+            {/* Error Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-destructive/20 bg-destructive/5 text-[10px] font-mono uppercase tracking-[0.3em] text-destructive mx-auto">
+              <AlertTriangle className="h-4 w-4 animate-pulse" />
+              System Alert
             </div>
 
-            {/* Decorative Elements */}
-            <div className="absolute top-10 left-10 w-20 h-20 bg-blue-200 dark:bg-blue-900 rounded-full blur-2xl opacity-30 animate-pulse"></div>
-            <div
-                className="absolute bottom-10 right-10 w-32 h-32 bg-indigo-200 dark:bg-indigo-900 rounded-full blur-3xl opacity-30 animate-pulse"
-                style={{ animationDelay: "1s" }}
-            ></div>
+            {/* Error Code Display */}
+            <div className="relative border border-gray-200 rounded-md dark:border-0">
+              <div className="absolute inset-0 bg-primary/10 rounded-3xl blur-3xl" />
+              <div className="relative p-12 rounded-3xl bg-card/40 border border-white/10 backdrop-blur-2xl space-y-6">
+                <div className="flex items-center justify-center gap-4">
+                  <Terminal className="h-8 w-8 text-primary" />
+                  <h1 className="text-8xl md:text-9xl font-bold font-mono tracking-tighter text-primary">
+                    404
+                  </h1>
+                </div>
+
+                <div className="h-px w-full bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+
+                <div className="space-y-3">
+                  <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
+                    Void Space Detected
+                  </h2>
+                  <p className="text-muted-foreground max-w-md mx-auto leading-relaxed">
+                    The protocol you&apos;re searching for has drifted beyond
+                    the known universe. This sector is unmapped.
+                  </p>
+                </div>
+
+                {/* Terminal-style error log */}
+                <div className="p-6 rounded-xl dark:bg-black/40 bg-white/100 border border-white/5 font-mono text-left max-w-lg mx-auto">
+                  <div className="space-y-2 text-sm">
+                    <div className="flex gap-2">
+                      <span className="text-primary">$</span>
+                      <span className="text-muted-foreground">
+                        neso locate --path=
+                        <span className="text-destructive">unknown</span>
+                      </span>
+                    </div>
+                    <div className="text-destructive/70 text-xs pl-4">
+                      ERROR: Route not found in foundry index
+                    </div>
+                    <div className="text-muted-foreground/50 text-xs pl-4">
+                      Suggestion: Return to base protocol
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex justify-center">
+              <Link
+                href="/"
+                className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors font-mono uppercase tracking-widest text-xs group py-2"
+              >
+                <ArrowLeft className="h-4 w-4 transition-transform duration-300 ease-in-out group-hover:-translate-x-2" />
+                Return to Base
+              </Link>
+            </div>
+
+            {/* Technical Diagnostics */}
+            <div className="pt-4 border-t border-white/5">
+              <div className="grid grid-cols-3 gap-6 max-w-2xl mx-auto">
+                <div className="text-center">
+                  <div className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest mb-1">
+                    Status Code
+                  </div>
+                  <div className="text-lg font-bold text-destructive">404</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest mb-1">
+                    Error Type
+                  </div>
+                  <div className="text-lg font-bold">Not Found</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest mb-1">
+                    Protocol
+                  </div>
+                  <div className="text-lg font-bold text-primary">NESO-1</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    );
+      </section>
+
+      <Footer />
+    </main>
+  );
 }

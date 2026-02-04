@@ -7,6 +7,7 @@ import { Youtube, Facebook, MessageSquare, Zap } from "lucide-react";
 
 const communityPlatforms = [
   {
+    id: "9f3c2c6e-7b9d-4c2a-9c7e-1f6b8a4d2e31",
     name: "Best Golang Community Ever",
     description:
       "The heart of our technical discussions. Join 3k+ developers to discuss protocols, contribute to OSS, and get real-time support.",
@@ -19,6 +20,7 @@ const communityPlatforms = [
     btnHover: "hover:bg-[#5865F2] hover:border-[#5865F2] hover:text-white",
   },
   {
+    id: "4a1d8b72-6e5f-4d93-b2a7-8c0f3e9d5b44",
     name: "Go With Habib",
     description:
       "Deep-dives into the Neso architecture, technical tutorials, and live-streams of our engineering sprints.",
@@ -31,7 +33,8 @@ const communityPlatforms = [
     btnHover: "hover:bg-[#FF0000] hover:border-[#FF0000] hover:text-white",
   },
   {
-    name: "Best Golang Community Ever",
+    id: "c7e92a10-3f6b-4a5e-8d21-6b0c9f2a7e58",
+    name: "Neso Community",
     description:
       "Stay updated with our mission, community highlights, and general announcements for the wider ecosystem.",
     icon: <Facebook className="h-8 w-8 text-[#1877F2]" />,
@@ -77,7 +80,7 @@ export default function CommunityPage() {
         <div className="grid md:grid-cols-3 gap-8">
           {communityPlatforms.map((platform) => (
             <div
-              key={platform.name}
+              key={platform.id}
               className={` group relative p-8 rounded-2xl border border-gray-200 shadow-md dark:border dark:border-white/9  bg-card/30 backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/5 ${platform.color}`}
             >
               <div
