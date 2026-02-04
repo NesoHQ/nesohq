@@ -8,7 +8,7 @@ on:
 
 env:
   REGISTRY_GHCR: ghcr.io
-  IMAGE_PREFIX: nesohq/nesohq
+  IMAGE_PREFIX: nesohq/landing
 
 jobs:
   build-and-push:
