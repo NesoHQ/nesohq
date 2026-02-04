@@ -17,4 +17,6 @@ jobs:
       contents: read
       packages: write
     uses: ./.github/workflows/docker-build.yml
+    with:
+      service: '.'
     secrets: inherit

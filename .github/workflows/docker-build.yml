@@ -2,6 +2,12 @@ name: Docker Build and Push
 
 on:
   workflow_call:
+    inputs:
+      service:
+        description: 'Service name to build'
+        required: false
+        type: string
+        default: '.'
     secrets:
       DOCKERHUB_USERNAME:
         required: false
@@ -15,7 +21,6 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: inputs.should-build
     
     permissions:
       contents: read
