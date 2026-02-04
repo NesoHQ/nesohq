@@ -3,15 +3,7 @@
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
-import {
-  Shield,
-  Target,
-  Compass,
-  Zap,
-  Cpu,
-  Globe,
-  ArrowRight,
-} from "lucide-react";
+import { Shield, Target, Compass, Zap, Cpu, Globe } from "lucide-react";
 
 const coreValues = [
   {
@@ -60,11 +52,14 @@ const roadmap = [
 
 export default function MissionPage() {
   return (
-    <main className="min-h-screen flex flex-col bg-background">
+    <main className="min-h-screen flex flex-col ">
       <Navbar />
 
       {/* Hero Section */}
       <section className="relative pt-32 md:pt-48 pb-20 overflow-hidden">
+        {/* Technical Grid Background */}
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+
         {/* Technical Decor */}
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-size-[32px_32px]" />
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/2" />
@@ -240,24 +235,19 @@ export default function MissionPage() {
             engineers who aren&apos;t afraid of building the impossible.
           </p>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-6 relative z-10">
-            <div className="relative group/btn">
-              <div className="absolute -inset-0.5 bg-primary/40 rounded-sm blur opacity-20 group-hover/btn:opacity-60 transition duration-1000" />
-              <Button
-                size="lg"
-                className="relative h-14 px-12 rounded-none bg-primary text-primary-foreground font-bold uppercase tracking-[0.2em] text-[10px] transition-all hover:scale-[1.02] active:scale-95 shadow-[0_0_25px_rgba(var(--primary),0.4)]"
-              >
-                Initialize Connection
-              </Button>
-            </div>
-
+          <div className="flex flex-wrap justify-center gap-6">
+            <Button
+              size="lg"
+              className="rounded-full px-10 bg-primary cursor-pointer text-primary-foreground dark:text-black hover:bg-primary/90 hover:scale-105 transition-all text-sm font-bold uppercase tracking-widest h-14 shadow-lg shadow-primary/20"
+            >
+              Initialize Connection
+            </Button>
             <Button
               variant="outline"
               size="lg"
-              className="h-14 px-12 rounded-none border border-primary/20 hover:bg-primary/5 text-primary font-bold uppercase tracking-[0.2em] text-[10px] gap-3 group/nav"
+              className="rounded-full px-10 border-primary/20 cursor-pointer hover:bg-primary/10 text-primary hover:text-primary text-sm font-bold uppercase tracking-widest h-14"
             >
               Read Governance
-              <ArrowRight className="h-4 w-4 transition-transform group-hover/nav:translate-x-1" />
             </Button>
           </div>
         </div>
