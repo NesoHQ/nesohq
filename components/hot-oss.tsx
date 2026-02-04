@@ -28,7 +28,7 @@ const hotProjects = [
     tech: ["Go", "Next.js", "PostgreSQL"],
     tags: ["Knowledge Vault", "Community Driven"],
     links: {
-      repo: "https://github.com/bgce/archive",
+      repo: "https://github.com/NesoHQ/bgce-archive",
       live: "https://archive.bgce.org",
     },
     reportCards: ["Cortex", "Ecommerce", "Skeleton"],
@@ -48,8 +48,8 @@ const hotProjects = [
     tech: ["Next.js", "TailwindCSS", "TypeScript"],
     tags: ["EdTech", "Classic UI"],
     links: {
-      repo: "https://github.com/amar-pathagar/frontend",
-      live: "https://amarpathagar.org",
+      repo: "https://github.com/NesoHQ/amar-pathagar-frontend",
+      live: "http://91.98.134.15:3000/",
     },
     reportCards: ["Frontend", "API-Safe"],
   },
@@ -62,14 +62,14 @@ const hotProjects = [
     stats: {
       stars: "2.8k",
       commits: "1.5k+",
-      version: "v3.2.1-stable",
+      version: "v3.2.1",
       status: "Operational",
     },
     tech: ["Go", "React", "PostgreSQL", "Docker"],
     tags: ["Infra", "Security", "backup"],
     links: {
-      repo: "https://github.com/ruckhalt/core",
-      live: "https://ruckhalt.io",
+      repo: "https://github.com/NesoHQ/storage-manager",
+      live: "https://storage-manager.zendevz.com/",
     },
     reportCards: ["Core-S3", "DB-Dump", "VPS-Relay"],
   },
@@ -169,7 +169,7 @@ export function HotOSS() {
                   <div className="lg:col-span-7 flex flex-col gap-8">
                     {/* Diagnostic Grid - Keep 4 columns on all but very small screens */}
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                      <div className="p-4 rounded-2xl bg-black/40 border border-white/5 flex flex-col items-center text-center">
+                      <div className="p-4 rounded-2xl bg-gray-300 dark:bg-black/40  border border-white/5 flex flex-col items-center text-center">
                         <Star className="h-5 w-5 text-primary mb-2" />
                         <span className="text-xl font-bold font-mono">
                           {project.stats.stars}
@@ -178,7 +178,7 @@ export function HotOSS() {
                           Stars
                         </span>
                       </div>
-                      <div className="p-4 rounded-2xl bg-black/40 border border-white/5 flex flex-col items-center text-center">
+                      <div className="p-4 rounded-2xl bg-gray-300 dark:bg-black/40 border border-white/5 flex flex-col items-center text-center">
                         <ShieldCheck className="h-5 w-5 text-emerald-500 mb-2" />
                         <span className="text-xl font-bold font-mono">
                           {project.stats.status}
@@ -187,7 +187,7 @@ export function HotOSS() {
                           State
                         </span>
                       </div>
-                      <div className="p-4 rounded-2xl bg-black/40 border border-white/5 flex flex-col items-center text-center">
+                      <div className="p-4 rounded-2xl bg-gray-300 dark:bg-black/40 border border-white/5 flex flex-col items-center text-center">
                         <GitFork className="h-5 w-5 text-primary mb-2" />
                         <span className="text-xl font-bold font-mono">
                           {project.stats.commits}
@@ -196,7 +196,7 @@ export function HotOSS() {
                           Commits
                         </span>
                       </div>
-                      <div className="p-4 rounded-2xl bg-black/40 border border-white/5 flex flex-col items-center text-center">
+                      <div className="p-4 rounded-2xl bg-gray-300 dark:bg-black/40 border border-white/5 flex flex-col items-center text-center">
                         <Terminal className="h-5 w-5 text-primary mb-2" />
                         <span className="text-lg font-bold font-mono">
                           {project.stats.version}

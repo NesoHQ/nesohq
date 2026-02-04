@@ -108,7 +108,7 @@ export default function CommunityPage() {
                   href={platform.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2"
+                  className="flex items-center justify-center gap-2 font-bold uppercase tracking-[0.2em] text-[10px]"
                 >
                   {platform.cta}
                   <Zap className="h-3 w-3 transition-transform group-hover/btn:translate-x-1" />
@@ -179,14 +179,14 @@ export default function CommunityPage() {
             <div className="flex flex-wrap justify-center gap-6">
               <Button
                 size="lg"
-                className="rounded-full px-10 bg-primary text-black hover:bg-primary/90 hover:scale-105 transition-all text-sm font-bold uppercase tracking-widest h-14"
+                className="rounded-full px-10 bg-primary cursor-pointer dark:text-black hover:bg-primary/90 hover:scale-105 transition-all text-sm font-bold uppercase tracking-widest h-14"
               >
                 Launch Protocol
               </Button>
               <Button
                 variant="outline"
                 size="lg"
-                className="rounded-full px-10 border-white/20 hover:bg-white/5 text-sm font-bold uppercase tracking-widest h-14"
+                className="rounded-full px-10 border-gray-300 cursor-pointer dark:border-white/20 hover:bg-white/5 text-sm font-bold uppercase tracking-widest h-14"
               >
                 View Handbook
               </Button>

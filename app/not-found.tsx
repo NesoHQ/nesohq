@@ -26,7 +26,7 @@ export default function NotFound() {
             </div>
 
             {/* Error Code Display */}
-            <div className="relative">
+            <div className="relative border border-gray-200 rounded-md dark:border-0">
               <div className="absolute inset-0 bg-primary/10 rounded-3xl blur-3xl" />
               <div className="relative p-12 rounded-3xl bg-card/40 border border-white/10 backdrop-blur-2xl space-y-6">
                 <div className="flex items-center justify-center gap-4">
@@ -49,7 +49,7 @@ export default function NotFound() {
                 </div>
 
                 {/* Terminal-style error log */}
-                <div className="p-6 rounded-xl bg-black/40 border border-white/5 font-mono text-left max-w-lg mx-auto">
+                <div className="p-6 rounded-xl dark:bg-black/40 bg-white/100 border border-white/5 font-mono text-left max-w-lg mx-auto">
                   <div className="space-y-2 text-sm">
                     <div className="flex gap-2">
                       <span className="text-primary">$</span>

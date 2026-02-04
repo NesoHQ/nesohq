@@ -3,15 +3,7 @@
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
-import {
-  Shield,
-  Target,
-  Compass,
-  Zap,
-  Cpu,
-  Globe,
-  ArrowRight,
-} from "lucide-react";
+import { Shield, Target, Compass, Zap, Cpu, Globe } from "lucide-react";
 
 const coreValues = [
   {
@@ -240,24 +232,19 @@ export default function MissionPage() {
             engineers who aren&apos;t afraid of building the impossible.
           </p>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-6 relative z-10">
-            <div className="relative group/btn">
-              <div className="absolute -inset-0.5 bg-primary/40 rounded-sm blur opacity-20 group-hover/btn:opacity-60 transition duration-1000" />
-              <Button
-                size="lg"
-                className="relative h-14 px-12 rounded-none bg-primary text-primary-foreground font-bold uppercase tracking-[0.2em] text-[10px] transition-all hover:scale-[1.02] active:scale-95 shadow-[0_0_25px_rgba(var(--primary),0.4)]"
-              >
-                Initialize Connection
-              </Button>
-            </div>
-
+          <div className="flex flex-wrap justify-center gap-6">
+            <Button
+              size="lg"
+              className="rounded-full px-10 bg-primary cursor-pointer text-primary-foreground dark:text-black hover:bg-primary/90 hover:scale-105 transition-all text-sm font-bold uppercase tracking-widest h-14 shadow-lg shadow-primary/20"
+            >
+              Initialize Connection
+            </Button>
             <Button
               variant="outline"
               size="lg"
-              className="h-14 px-12 rounded-none border border-primary/20 hover:bg-primary/5 text-primary font-bold uppercase tracking-[0.2em] text-[10px] gap-3 group/nav"
+              className="rounded-full px-10 border-primary/20 cursor-pointer hover:bg-primary/10 text-primary hover:text-primary text-sm font-bold uppercase tracking-widest h-14"
             >
               Read Governance
-              <ArrowRight className="h-4 w-4 transition-transform group-hover/nav:translate-x-1" />
             </Button>
           </div>
         </div>
