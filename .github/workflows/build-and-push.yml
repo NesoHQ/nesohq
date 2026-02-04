@@ -53,3 +53,107 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           platforms: linux/amd64,linux/arm64
+
+
+
+# name: Build and Push Docker Images
+
+# on:
+#   push:
+#     branches: [main]
+#     tags:
+#       - 'v*.*.*'
+
+# env:
+#   REGISTRY: ghcr.io
+#   IMAGE_NAME: ${{ github.repository }}
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     permissions:
+#       contents: read
+#       packages: write
+      
+#     steps:
+#       - name: 📥 Checkout code
+#         uses: actions/checkout@v4
+
+#       - name: 🔧 Set up Docker Buildx
+#         uses: docker/setup-buildx-action@v3
+
+#       - name: 🔐 Login to GitHub Container Registry
+#         uses: docker/login-action@v3
+#         with:
+#           registry: ${{ env.REGISTRY }}
+#           username: ${{ github.actor }}
+#           password: ${{ secrets.GITHUB_TOKEN }}
+
+#       - name: 🏷️ Extract metadata
+#         id: meta
+#         uses: docker/metadata-action@v5
+#         with:
+#           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+#           tags: |
+#             type=ref,event=branch
+#             type=semver,pattern={{version}}
+#             type=semver,pattern={{major}}.{{minor}}
+#             type=sha,prefix={{branch}}-
+#             type=raw,value=latest,enable={{is_default_branch}}
+#             type=sha
+
+#       - name: 🐳 Build and push Docker image
+#         uses: docker/build-push-action@v5
+#         with:
+#           context: .
+#           push: true
+#           tags: ${{ steps.meta.outputs.tags }}
+#           labels: ${{ steps.meta.outputs.labels }}
+#           cache-from: type=gha
+#           cache-to: type=gha,mode=max
+#           platforms: linux/amd64,linux/arm64
+
+#   update-infra:
+#     needs: build
+#     runs-on: ubuntu-latest
+#     if: github.ref == 'refs/heads/main'
+    
+#     steps:
+#       - name: 📥 Checkout infra repo
+#         uses: actions/checkout@v4
+#         with:
+#           repository: nesohq/infra-nesohq-landing
+#           token: ${{ secrets.INFRA_PAT }}
+#           path: infra
+
+#       - name: 🔄 Update image tag
+#         run: |
+#           cd infra
+#           sed -i "s|image: ghcr.io/nesohq/nesohq:.*|image: ghcr.io/nesohq/nesohq:sha-${GITHUB_SHA::7}|" k8s/deployment.yaml
+          
+#       - name: 📝 Create Pull Request
+#         uses: peter-evans/create-pull-request@v6
+#         with:
+#           token: ${{ secrets.INFRA_PAT }}
+#           path: infra
+#           branch: update-image-${{ github.sha }}
+#           commit-message: "Update landing image to sha-${{ github.sha }}"
+#           title: "🚀 Update landing image to ${{ github.sha }}"
+#           body: |
+#             ## Image Update
+            
+#             **Commit:** ${{ github.sha }}
+#             **Image:** `ghcr.io/nesohq/nesohq:sha-${{ github.sha }}`
+#             **Triggered by:** ${{ github.event.head_commit.message }}
+            
+#             ### Changes
+#             - Updated deployment image tag
+            
+#             ### Testing
+#             ```bash
+#             kubectl apply -f k8s/deployment.yaml
+#             kubectl rollout status deployment/landing -n nesohq-landing
+#             ```
+#           labels: |
+#             automated
+#             deployment
