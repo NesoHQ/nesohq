@@ -10,6 +10,10 @@ inputs:
     description: "Image name prefix"
     required: false
     default: "nesohq/nesohq"
+  service:
+    description: "Service name"
+    required: false
+    default: "landing"
 
 outputs:
   tags:

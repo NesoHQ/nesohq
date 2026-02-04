@@ -18,5 +18,5 @@ jobs:
       packages: write
     uses: ./.github/workflows/docker-build.yml
     with:
-      service: '.'
+      service: 'landing'
     secrets: inherit
