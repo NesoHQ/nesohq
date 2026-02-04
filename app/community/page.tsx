@@ -4,41 +4,43 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Youtube, Facebook, MessageSquare, Zap } from "lucide-react";
-import Link from "next/link";
 
 const communityPlatforms = [
   {
-    name: "Discord",
+    name: "Best Golang Community Ever",
     description:
-      "The heart of our technical discussions. Join 12k+ developers to discuss protocols, contribute to OSS, and get real-time support.",
+      "The heart of our technical discussions. Join 3k+ developers to discuss protocols, contribute to OSS, and get real-time support.",
     icon: <MessageSquare className="h-8 w-8 text-[#5865F2]" />,
-    link: "https://discord.gg/nesohq",
+    link: "https://discord.gg/xvArbFbh34",
     cta: "Join the Server",
-    stats: "12,402 Members",
+    stats: "3,000 Members",
     color: "group-hover:border-[#5865F2]/50",
     bg: "bg-[#5865F2]/5",
+    btnHover: "hover:bg-[#5865F2] hover:border-[#5865F2] hover:text-white",
   },
   {
-    name: "YouTube",
+    name: "Go With Habib",
     description:
       "Deep-dives into the Neso architecture, technical tutorials, and live-streams of our engineering sprints.",
     icon: <Youtube className="h-8 w-8 text-[#FF0000]" />,
-    link: "https://youtube.com/nesohq",
+    link: "https://www.youtube.com/@gowithhabib",
     cta: "Subscribe Now",
-    stats: "45.2k Subscribers",
+    stats: "7.92K Subscribers",
     color: "group-hover:border-[#FF0000]/50",
     bg: "bg-[#FF0000]/5",
+    btnHover: "hover:bg-[#FF0000] hover:border-[#FF0000] hover:text-white",
   },
   {
-    name: "Facebook",
+    name: "Best Golang Community Ever",
     description:
       "Stay updated with our mission, community highlights, and general announcements for the wider ecosystem.",
     icon: <Facebook className="h-8 w-8 text-[#1877F2]" />,
-    link: "https://facebook.com/nesohq",
+    link: "https://www.facebook.com/share/g/1HP24y1kfg/",
     cta: "Follow Page",
-    stats: "8.9k Followers",
+    stats: "7.0K Followers",
     color: "group-hover:border-[#1877F2]/50",
     bg: "bg-[#1877F2]/5",
+    btnHover: "hover:bg-[#1877F2] hover:border-[#1877F2] hover:text-white",
   },
 ];
 
@@ -76,7 +78,7 @@ export default function CommunityPage() {
           {communityPlatforms.map((platform) => (
             <div
               key={platform.name}
-              className={`group relative p-8 rounded-2xl border border-white/5 bg-card/30 backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/5 ${platform.color}`}
+              className={` group relative p-8 rounded-2xl border border-gray-200 shadow-md dark:border dark:border-white/9  bg-card/30 backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/5 ${platform.color}`}
             >
               <div
                 className={`w-16 h-16 rounded-xl ${platform.bg} flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110`}
@@ -99,17 +101,18 @@ export default function CommunityPage() {
 
               <Button
                 variant="outline"
-                className="w-full rounded-none border-primary/20 hover:bg-primary/10 hover:border-primary/50 group/btn h-12"
+                className={`w-full rounded-none border-primary/20 group/btn h-12 ${platform.btnHover}`}
                 asChild
               >
-                <Link
+                <a
                   href={platform.link}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2"
                 >
                   {platform.cta}
                   <Zap className="h-3 w-3 transition-transform group-hover/btn:translate-x-1" />
-                </Link>
+                </a>
               </Button>
             </div>
           ))}
