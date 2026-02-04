@@ -52,11 +52,14 @@ const roadmap = [
 
 export default function MissionPage() {
   return (
-    <main className="min-h-screen flex flex-col bg-background">
+    <main className="min-h-screen flex flex-col ">
       <Navbar />
 
       {/* Hero Section */}
       <section className="relative pt-32 md:pt-48 pb-20 overflow-hidden">
+        {/* Technical Grid Background */}
+        <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+
         {/* Technical Decor */}
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-size-[32px_32px]" />
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/2" />
