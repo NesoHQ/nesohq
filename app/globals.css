@@ -134,6 +134,23 @@
   }
 }
 
+/* View Transitions optimization */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+  display: block;
+}
+
+/* Ensure the old view doesn't disappear too early */
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 999;
+}
+
 @layer utilities {
   @keyframes fade-in {
     from {

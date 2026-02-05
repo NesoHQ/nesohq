@@ -72,15 +72,6 @@ export function Navbar() {
             {/* CTA - Solid & Minimal */}
             <div className="hidden md:flex items-center gap-4">
               <ModeToggle />
-              <Link
-                href="/login"
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-              >
-                Log In
-              </Link>
-              <Button className="rounded-full px-6 bg-foreground text-background hover:bg-primary hover:text-foreground transition-all duration-300 font-medium">
-                <Link href="/join">Initialize</Link>
-              </Button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -117,21 +108,6 @@ export function Navbar() {
                 </Link>
               );
             })}
-            <div className="mt-8 flex flex-col gap-4">
-              <Button
-                size="lg"
-                className="w-full bg-foreground text-background rounded-xl"
-              >
-                Initialize Sequence
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full border-border rounded-xl"
-              >
-                Log In
-              </Button>
-            </div>
           </div>
         </div>
       )}
