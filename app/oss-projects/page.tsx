@@ -14,6 +14,7 @@ import {
   Users,
   Calendar,
   Menu,
+  X,
 } from "lucide-react";
 
 const projects = [
@@ -24,16 +25,16 @@ const projects = [
     description:
       "A comprehensive archive system for the Best Golang Community Ever. Features advanced search, categorization, and community contributions for preserving technical knowledge and resources.",
     stats: {
-      stars: "2.8k",
-      forks: "342",
-      commits: "1.5k+",
-      contributors: "28",
+      stars: "103",
+      forks: "66",
+      commits: "392+",
+      contributors: "31",
     },
     tech: ["Go", "Next.js", "PostgreSQL", "Docker"],
     tags: ["Knowledge Vault", "Community Driven", "Archive"],
     links: {
       repo: "https://github.com/NesoHQ/bgce-archive",
-      live: "https://archive.bgce.org",
+      live: "https://nesohq.github.io/bgce-archive/",
     },
     version: "v2.1.0",
     status: "Active",
@@ -45,10 +46,10 @@ const projects = [
     description:
       "A modern educational platform built with Next.js and TypeScript. Provides an intuitive interface for learning management, course delivery, and student engagement with a focus on accessibility.",
     stats: {
-      stars: "1.2k",
-      forks: "156",
-      commits: "890+",
-      contributors: "12",
+      stars: "1",
+      forks: "0",
+      commits: "44+",
+      contributors: "2",
     },
     tech: ["Next.js", "TypeScript", "TailwindCSS", "Prisma"],
     tags: ["EdTech", "Classic UI", "Learning"],
@@ -66,10 +67,10 @@ const projects = [
     description:
       "A robust storage management system with S3 integration, database dump automation, and VPS relay capabilities. Built for reliability and security in production environments.",
     stats: {
-      stars: "3.1k",
-      forks: "428",
-      commits: "2.2k+",
-      contributors: "18",
+      stars: "16",
+      forks: "4",
+      commits: "2+",
+      contributors: "0",
     },
     tech: ["Go", "React", "PostgreSQL", "Docker", "S3"],
     tags: ["Infrastructure", "Security", "Backup"],
@@ -151,19 +152,7 @@ export default function OSSProjectsPage() {
                   onClick={() => setIsDrawerOpen(false)}
                   className="p-2 hover:bg-white/5 rounded-lg transition-colors"
                 >
-                  <svg
-                    className="h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
+                  <X className="h-4 w-4" />
                 </button>
               </div>
 
@@ -225,7 +214,7 @@ export default function OSSProjectsPage() {
                     <div className="flex items-start justify-between gap-2 mb-2">
                       <h3 className="font-bold text-sm">{project.name}</h3>
                       {selectedProject.id === project.id && (
-                        <div className="h-2 w-2 rounded-full bg-primary animate-pulse" />
+                        <div className="h-2 w-2 rounded-full  animate-pulse bg-blue-500" />
                       )}
                     </div>
                     <p className="text-xs text-muted-foreground line-clamp-2">
@@ -299,7 +288,7 @@ export default function OSSProjectsPage() {
                       {selectedProject.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="px-3 py-1 rounded-full bg-background/50 border border-white/10 text-[10px] font-mono uppercase tracking-wider"
+                          className="px-3 py-1 rounded-full bg-background/50 border border-gray-300 dark:border-white/10 text-[10px] font-mono uppercase tracking-wider"
                         >
                           {tag}
                         </span>

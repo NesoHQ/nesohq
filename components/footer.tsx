@@ -170,15 +170,6 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
             <div className="space-y-4">
               <div className="flex flex-wrap gap-6 text-xs text-muted-foreground">
-                <Link href="#" className="hover:text-primary transition-colors">
-                  Privacy
-                </Link>
-                <Link href="#" className="hover:text-primary transition-colors">
-                  Site Terms
-                </Link>
-                <Link href="#" className="hover:text-primary transition-colors">
-                  Cookie Preferences
-                </Link>
                 <span>
                   © 2026, NesoHQ, Inc. or its affiliates. All rights reserved.
                 </span>
@@ -186,20 +177,12 @@ export function Footer() {
             </div>
 
             <div className="flex items-center gap-4 text-muted-foreground">
-              <Link href="#" className="hover:text-primary transition-colors">
-                <Twitter className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="hover:text-primary transition-colors">
-                <Linkedin className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="hover:text-primary transition-colors">
+              <Link
+                href="https://github.com/NesoHQ"
+                target="blank"
+                className="hover:text-primary transition-colors"
+              >
                 <Github className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="hover:text-primary transition-colors">
-                <Youtube className="h-5 w-5" />
-              </Link>
-              <Link href="#" className="hover:text-primary transition-colors">
-                <MessageCircle className="h-5 w-5" />
               </Link>
             </div>
           </div>
