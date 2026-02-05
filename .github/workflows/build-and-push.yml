@@ -60,8 +60,9 @@ jobs:
           curl -X POST \
             -H "Authorization: token ${{ secrets.INFRA_REPO_TOKEN }}" \
             -H "Accept: application/vnd.github.v3+json" \
-            https://api.github.com/repos/NesoHQ/nesohq-infra/dispatches \
+            https://api.github.com/repos/opskraken/nesohq-infra/dispatches \
             -d '{"event_type":"deploy-staging"}'
+
 
 
 
