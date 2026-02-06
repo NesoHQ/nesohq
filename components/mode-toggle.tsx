@@ -79,14 +79,14 @@ export function ModeToggle() {
           size={10}
           className={cn(
             "transition-all duration-500",
-            isDark ? "text-slate-700 opacity-50" : "text-white opacity-0",
+            isDark ? "text-slate-100 opacity-50" : "text-white opacity-0",
           )}
         />
         <Moon
           size={10}
           className={cn(
             "transition-all duration-500",
-            !isDark ? "text-blue-600 opacity-50" : "text-white opacity-0",
+            !isDark ? "text-blue-600 " : "text-white opacity-0",
           )}
         />
       </div>
