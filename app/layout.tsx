@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -30,6 +31,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* Krakens Analytics */}
+        <Script
+          src="https://krakens.nesohq.org/krakens.js"
+          strategy="afterInteractive"
+        />
+        <Script id="krakens-init" strategy="afterInteractive">
+          {`Krakens.init('hrd_2f181a4d20e8cfa185961c53d1f5fd6ad55b53ad5f21cf66ce3478ada571f0ae');`}
+        </Script>
+        
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
