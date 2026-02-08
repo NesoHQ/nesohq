@@ -4,6 +4,8 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Youtube, Facebook, MessageSquare, Zap } from "lucide-react";
+import { motion } from "framer-motion";
+import CountUp from "@/components/ui/count-up";
 
 const communityPlatforms = [
   {
@@ -58,20 +60,35 @@ export default function CommunityPage() {
         <div className="absolute inset-0 -z-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
 
         <div className="container px-6 mx-auto text-center space-y-8">
-          <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-primary border border-primary/20 px-4 py-1.5 rounded-full bg-primary/5">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-primary border border-primary/20 px-4 py-1.5 rounded-full bg-primary/5"
+          >
             Network Status: Active / Nodes: 1,024
-          </div>
+          </motion.div>
 
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-5xl md:text-7xl font-bold tracking-tight text-foreground"
+          >
             United in the <br />
             <span className="text-primary italic">Deep Field</span>.
-          </h1>
+          </motion.h1>
 
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+          >
             NesoHQ is more than code. It&apos;s a global collective of
             engineers, designers, and visionaries building the infrastructure of
             the future.
-          </p>
+          </motion.p>
         </div>
       </section>
 
@@ -128,7 +145,7 @@ export default function CommunityPage() {
           <div className="grid md:grid-cols-4 gap-12 text-center">
             <div className="space-y-2">
               <div className="text-4xl font-bold text-primary font-mono tracking-tighter">
-                120+
+                <CountUp to={120} suffix="+" className="count-up-text" />
               </div>
               <div className="text-xs uppercase tracking-widest text-muted-foreground font-medium">
                 Controlling Nodes
@@ -136,7 +153,13 @@ export default function CommunityPage() {
             </div>
             <div className="space-y-2">
               <div className="text-4xl font-bold text-primary font-mono tracking-tighter">
-                2.4M
+                <CountUp
+                  to={2.4}
+                  suffix="M"
+                  decimals={1}
+                  duration={2.5}
+                  className="count-up-text"
+                />
               </div>
               <div className="text-xs uppercase tracking-widest text-muted-foreground font-medium">
                 Lines of OSS
@@ -144,7 +167,7 @@ export default function CommunityPage() {
             </div>
             <div className="space-y-2">
               <div className="text-4xl font-bold text-primary font-mono tracking-tighter">
-                150k
+                <CountUp to={150} suffix="k" className="count-up-text" />
               </div>
               <div className="text-xs uppercase tracking-widest text-muted-foreground font-medium">
                 Total Community
@@ -152,7 +175,7 @@ export default function CommunityPage() {
             </div>
             <div className="space-y-2">
               <div className="text-4xl font-bold text-primary font-mono tracking-tighter">
-                24/7
+                <CountUp to={24} suffix="/7" className="count-up-text" />
               </div>
               <div className="text-xs uppercase tracking-widest text-muted-foreground font-medium">
                 Uptime Protocol

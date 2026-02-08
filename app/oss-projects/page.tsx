@@ -16,6 +16,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -102,19 +103,34 @@ export default function OSSProjectsPage() {
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/2" />
 
         <div className="container px-6 mx-auto text-center space-y-6">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-[10px] font-mono uppercase tracking-[0.3em] text-primary">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-[10px] font-mono uppercase tracking-[0.3em] text-primary"
+          >
             <Code2 className="h-4 w-4" />
             Open Source Registry
-          </div>
+          </motion.div>
 
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-5xl md:text-7xl font-bold tracking-tight text-foreground"
+          >
             Our <span className="text-primary italic">Protocols</span>
-          </h1>
+          </motion.h1>
 
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed"
+          >
             Production-grade open-source projects built by the NesoHQ foundry.
             Battle-tested, community-driven, and engineered for scale.
-          </p>
+          </motion.p>
         </div>
       </section>
 
