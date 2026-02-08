@@ -4,6 +4,7 @@ import { Terminal } from "@/components/Hero/terminal";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Globe, Cpu, Zap } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export function Hero() {
   return (
@@ -19,26 +20,46 @@ export function Hero() {
           {/* Left: Content */}
           <div className="space-y-8">
             {/* Tech Badge */}
-            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-primary">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-primary"
+            >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
               System Online / Region: Neso
-            </div>
+            </motion.div>
 
-            <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-foreground leading-[1.1]">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-5xl sm:text-7xl font-bold tracking-tight text-foreground leading-[1.1]"
+            >
               Constructing <br />
               The <span className="text-primary italic">Unknown</span>.
-            </h1>
+            </motion.h1>
 
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-lg border-l-2 border-primary/20 pl-6">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-lg border-l-2 border-primary/20 pl-6"
+            >
               NesoHQ is an open-source foundry for the next generation of
               builders. We engineere universal platforms that transcend the
               boundaries of current learning ecosystems.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-wrap gap-4 pt-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="flex flex-wrap gap-4 pt-4"
+            >
               <Button
                 size="lg"
                 className="h-12 px-8 rounded-none border border-primary bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all uppercase tracking-widest font-bold text-xs"
@@ -56,13 +77,13 @@ export function Hero() {
                   Running Protocol v1.0 <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-            </div>
+            </motion.div>
           </div>
 
           {/* Right: Abstract Visual / Dashboard UI */}
           <div className="relative">
             {/* Abstract Floating Cards / UI Elements */}
-            <div className="relative z-10 p-[1px] bg-linear-to-b from-white/10 to-transparent rounded-2xl backdrop-blur-sm border border-white/10 shadow-2xl overflow-hidden">
+            <div className="relative z-10 p-px bg-linear-to-b from-white/10 to-transparent rounded-2xl backdrop-blur-sm border border-white/10 shadow-2xl overflow-hidden">
               <div className="bg-card/50 rounded-xl p-6 md:p-8 border border-white/5 space-y-6">
                 <div className="flex items-center justify-between border-b border-white/5 pb-4">
                   <div className="flex items-center gap-3">

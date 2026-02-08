@@ -4,6 +4,9 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Shield, Target, Compass, Zap, Cpu, Globe } from "lucide-react";
+import { motion } from "framer-motion";
+import { DecentralizationStats } from "@/components/mission/decentralization-stats";
+import { HorizonProtocol } from "@/components/mission/horizon-protocol";
 
 const coreValues = [
   {
@@ -26,30 +29,6 @@ const coreValues = [
   },
 ];
 
-const roadmap = [
-  {
-    phase: "Phase 01",
-    title: "Foundational Protocols",
-    status: "Operational",
-    description:
-      "Establishing the core Neso-1 communication protocol and the open-source library architecture.",
-  },
-  {
-    phase: "Phase 02",
-    title: "Autonomous Agents",
-    status: "In Progress",
-    description:
-      "Deploying educational agents capable of real-time technical troubleshooting and personalized curriculum generation.",
-  },
-  {
-    phase: "Phase 03",
-    title: "The Void Network",
-    status: "Upcoming",
-    description:
-      "Launching a fully decentralized peer-to-peer knowledge mesh, removing reliance on centralized servers.",
-  },
-];
-
 export default function MissionPage() {
   return (
     <main className="min-h-screen flex flex-col ">
@@ -66,21 +45,36 @@ export default function MissionPage() {
 
         <div className="container px-6 mx-auto relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-[10px] font-mono uppercase tracking-[0.3em] text-primary mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/20 bg-primary/5 text-[10px] font-mono uppercase tracking-[0.3em] text-primary mx-auto"
+            >
               <Compass className="h-3 w-3 animate-spin-slow" />
               Strategic Directive
-            </div>
+            </motion.div>
 
-            <h1 className="text-5xl md:text-8xl font-bold tracking-tighter leading-[0.9] text-foreground">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-5xl md:text-8xl font-bold tracking-tighter leading-[0.9] text-foreground"
+            >
               Engineering the <br />
               <span className="text-primary italic">Universal</span> Mind.
-            </h1>
+            </motion.h1>
 
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto font-medium"
+            >
               NesoHQ is a decentralized foundry. We are building the
               architectures that will power the next millennium of human and
               machine intelligence.
-            </p>
+            </motion.p>
           </div>
         </div>
       </section>
@@ -120,15 +114,7 @@ export default function MissionPage() {
               </div>
 
               <div className="space-y-4">
-                <div className="flex justify-between items-end">
-                  <span className="text-sm font-mono opacity-50">
-                    Decentralization Index
-                  </span>
-                  <span className="text-2xl font-bold">98.2%</span>
-                </div>
-                <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
-                  <div className="h-full bg-primary w-[98.2%] shadow-[0_0_12px_rgba(var(--primary),0.6)]" />
-                </div>
+                <DecentralizationStats />
               </div>
 
               <div className="grid grid-cols-2 gap-6 pt-6 border-t border-white/5">
@@ -176,49 +162,7 @@ export default function MissionPage() {
       </section>
 
       {/* Roadmap Section */}
-      <section className="py-32 container px-6 mx-auto">
-        <div className="text-center mb-20 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
-            The Horizon Protocol
-          </h2>
-          <p className="text-muted-foreground">
-            Our sequential path toward universal autonomy.
-          </p>
-        </div>
-
-        <div className="relative space-y-12 after:absolute after:left-[19px] md:after:left-1/2 after:top-0 after:h-full after:w-px after:bg-primary/20">
-          {roadmap.map((item, i) => (
-            <div
-              key={i}
-              className={`relative flex flex-col md:flex-row items-center gap-8 ${i % 2 === 1 ? "md:flex-row-reverse" : ""}`}
-            >
-              <div className="absolute left-0 md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-background border-2 border-primary z-10 flex items-center justify-center">
-                <div
-                  className={`w-3 h-3 rounded-full bg-primary ${item.status === "In Progress" ? "animate-pulse" : ""}`}
-                />
-              </div>
-
-              <div className="w-full md:w-1/2 pl-12 md:pl-0">
-                <div
-                  className={`p-8 rounded-[2rem] border border-white/5 bg-card/30 backdrop-blur-md space-y-4 ${i % 2 === 0 ? "md:mr-12" : "md:ml-12"}`}
-                >
-                  <div className="flex justify-between items-center text-[10px] font-mono tracking-widest text-primary">
-                    <span>{item.phase}</span>
-                    <span className="px-2 py-0.5 rounded border border-primary/30 uppercase">
-                      {item.status}
-                    </span>
-                  </div>
-                  <h4 className="text-2xl font-bold">{item.title}</h4>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-              <div className="hidden md:block w-1/2" />
-            </div>
-          ))}
-        </div>
-      </section>
+      <HorizonProtocol />
 
       {/* CTA */}
       <section className="py-32 container px-6 mx-auto">
