@@ -17,8 +17,12 @@ const navItems = [
 ];
 
 const socialLinks = [
-  { name: "Discord", icon: FaDiscord, href: "https://discord.gg/nesohq" },
-  { name: "GitHub", icon: FaGithub, href: "https://github.com/nesohq" },
+  {
+    name: "Discord",
+    icon: FaDiscord,
+    href: "https://discord.com/invite/xvArbFbh34",
+  },
+  { name: "GitHub", icon: FaGithub, href: "https://github.com/NesoHQ" },
 ];
 
 export function Navbar() {

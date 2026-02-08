@@ -55,7 +55,8 @@ const projects = [
     tags: ["EdTech", "Classic UI", "Learning"],
     links: {
       repo: "https://github.com/NesoHQ/amar-pathagar-frontend",
-      live: "http://91.98.134.15:3000/",
+      repo2: "https://github.com/NesoHQ/amar-pathagar-backend",
+      live: "https://amarpathagar.nesohq.org/",
     },
     version: "v1.8.2",
     status: "Active",
@@ -269,6 +270,24 @@ export default function OSSProjectsPage() {
                             Repo
                           </a>
                         </Button>
+                        {selectedProject.links.repo2 && (
+                          <Button
+                            size="sm"
+                            variant="outline"
+                            className="rounded-full border-primary/20 hover:bg-primary/10 font-bold uppercase tracking-widest text-[10px]"
+                            asChild
+                          >
+                            <a
+                              href={selectedProject.links.repo2}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-2"
+                            >
+                              <Github className="h-4 w-4" />
+                              Repo 2
+                            </a>
+                          </Button>
+                        )}
                         <Button
                           size="sm"
                           className="rounded-full bg-primary text-primary-foreground dark:text-black hover:bg-primary/90 font-bold uppercase tracking-widest text-[10px]"

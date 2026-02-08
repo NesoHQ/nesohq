@@ -8,6 +8,7 @@ import {
   Terminal,
   Code2,
   Globe,
+  Github,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -29,7 +30,7 @@ const hotProjects = [
     tags: ["Knowledge Vault", "Community Driven"],
     links: {
       repo: "https://github.com/NesoHQ/bgce-archive",
-      live: "https://archive.bgce.org",
+      live: "https://bgceac.nesohq.org/",
     },
     reportCards: ["Cortex", "Ecommerce", "Skeleton"],
   },
@@ -49,7 +50,8 @@ const hotProjects = [
     tags: ["EdTech", "Classic UI"],
     links: {
       repo: "https://github.com/NesoHQ/amar-pathagar-frontend",
-      live: "http://91.98.134.15:3000/",
+      repo2: "https://github.com/NesoHQ/amar-pathagar-backend",
+      live: "https://amarpathagar.nesohq.org/",
     },
     reportCards: ["Frontend", "API-Safe"],
   },
@@ -149,10 +151,30 @@ export function HotOSS() {
                         asChild
                         className="h-12 px-8 rounded-full bg-primary text-primary-foreground hover:scale-105 transition-all font-bold uppercase tracking-widest text-xs shadow-[0_0_20px_rgba(var(--primary),0.3)]"
                       >
-                        <Link href={project.links.repo} target="_blank">
+                        <Link
+                          href={project.links.repo}
+                          target="_blank"
+                          className="flex items-center gap-2"
+                        >
+                          <Github className="h-4 w-4" />
                           View Repo
                         </Link>
                       </Button>
+                      {project.links.repo2 && (
+                        <Button
+                          asChild
+                          className="h-12 px-8 rounded-full bg-primary text-primary-foreground hover:scale-105 transition-all font-bold uppercase tracking-widest text-xs shadow-[0_0_20px_rgba(var(--primary),0.3)]"
+                        >
+                          <Link
+                            href={project.links.repo2}
+                            target="_blank"
+                            className="flex items-center gap-2"
+                          >
+                            <Github className="h-4 w-4" />
+                            View Repo 2
+                          </Link>
+                        </Button>
+                      )}
                       <Button
                         variant="outline"
                         asChild
